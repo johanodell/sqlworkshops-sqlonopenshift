@@ -7,7 +7,7 @@ metadata:
 spec:
   skipAgAntiAffinity: true
   acceptEula: true
-  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-CTP2.1-ubuntu
+  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-latest
   availabilityGroups: [ag1]
   instanceRootVolumeClaimTemplate:
     accessModes: [ReadWriteOnce]
@@ -16,7 +16,7 @@ spec:
     storageClass: default
   saPassword:
     secretKeyRef: {key: sapassword, name: sql-secrets}
-  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-CTP2.4'}
+  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-latest'}
 ---
 apiVersion: v1
 kind: Service
@@ -35,7 +35,7 @@ metadata:
   namespace: ag1
 spec:
   skipAgAntiAffinity: true
-  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-CTP2.1-ubuntu
+  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-latest
   acceptEula: true
   availabilityGroups: [ag1]
   instanceRootVolumeClaimTemplate:
@@ -45,7 +45,7 @@ spec:
     storageClass: default
   saPassword:
     secretKeyRef: {key: sapassword, name: sql-secrets}
-  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-CTP2.4'}
+  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-latest'}
 ---
 apiVersion: v1
 kind: Service
@@ -64,7 +64,7 @@ metadata:
   namespace: ag1
 spec:
   skipAgAntiAffinity: true
-  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-CTP2.1-ubuntu
+  agentsContainerImage: mcr.microsoft.com/mssql/ha:2019-latest
   acceptEula: true
   availabilityGroups: [ag1]
   instanceRootVolumeClaimTemplate:
@@ -74,7 +74,7 @@ spec:
     storageClass: default
   saPassword:
     secretKeyRef: {key: sapassword, name: sql-secrets}
-  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-CTP2.4'}
+  sqlServerContainer: {image: 'mcr.microsoft.com/mssql/rhel/server:2019-latest'}
 ---
 apiVersion: v1
 kind: Service
